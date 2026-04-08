@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lao Brothers LawnMowing — Salt Lake City, UT</title>
+  <meta name="description" content="Lao Brothers LawnMowing — professional, family-run lawn care in Salt Lake City, UT. Mowing, edging, fertilization, seasonal cleanups, and more. Free estimates.">
+  <meta property="og:title" content="Lao Brothers LawnMowing | Salt Lake City, UT">
+  <meta property="og:description" content="Brothers by name. Neighbors by choice. Family-run lawn care in Salt Lake City — we show up, cut clean, and care every time.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-deep:   #182E22;
+      --green-mid:    #2D6247;
+      --green-fresh:  #52B788;
+      --gold:         #D4A72C;
+      --gold-light:   #F0C84A;
+      --cream:        #F7F3E9;
+      --paper:        #FDFCF8;
+      --card-bg:      #EDE8DA;
+      --charcoal:     #1A1A1C;
+      --warm-gray:    #6B6560;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--paper);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(24, 46, 34, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 0.9rem clamp(1.5rem, 5vw, 3rem);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .header-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .header-logo img {
+      width: 42px; height: 42px;
+      border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--gold);
+    }
+    .header-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 700; font-size: 1.05rem;
+      color: var(--cream); letter-spacing: -0.01em;
+    }
+    .header-cta {
+      background: var(--gold); color: var(--green-deep);
+      font-weight: 700; font-size: 0.85rem;
+      padding: 0.5rem 1.2rem; border-radius: 100px;
+      text-decoration: none; letter-spacing: 0.01em;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .header-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(212,167,44,0.45);
+    }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--green-deep);
+      display: grid; grid-template-columns: 1fr 1fr;
+      position: relative; overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 65% 85% at 28% 55%, rgba(45,98,71,0.55) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 50% at 90% 10%, rgba(82,183,136,0.12) 0%, transparent 55%);
+    }
+
+    .hero-content {
+      grid-column: 1;
+      padding: clamp(7rem, 13vw, 10rem) clamp(2rem, 6vw, 5rem) 5rem;
+      display: flex; flex-direction: column; justify-content: center;
+      z-index: 1;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(212,167,44,0.12);
+      border: 1px solid rgba(212,167,44,0.35);
+      color: var(--gold); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 100px;
+      width: fit-content; margin-bottom: 1.75rem;
+    }
+    .hero-pill-dot {
+      width: 6px; height: 6px;
+      background: var(--gold); border-radius: 50%;
+      animation: blink 2.2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity:1; } 50% { opacity:0.3; }
+    }
+
+    .hero-logo {
+      width: clamp(64px, 7vw, 82px); height: clamp(64px, 7vw, 82px);
+      border-radius: 50%; object-fit: cover;
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 0 10px rgba(212,167,44,0.09);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+      font-weight: 900; color: var(--cream);
+      line-height: 1.04; letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+    .hero h1 em {
+      font-style: italic; color: var(--green-fresh);
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: rgba(247,243,233,0.65); font-weight: 300;
+      line-height: 1.6; max-width: 400px; margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: var(--gold); color: var(--green-deep);
+      font-weight: 700; font-size: 1rem;
+      padding: 0.9rem 2rem; border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,167,44,0.5);
+    }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: rgba(247,243,233,0.75); font-weight: 500; font-size: 0.95rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(247,243,233,0.25); padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--green-fresh); border-color: var(--green-fresh); }
+
+    .hero-trust {
+      display: flex; gap: clamp(1.5rem, 3vw, 2.5rem); flex-wrap: wrap;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(247,243,233,0.1);
+    }
+    .trust-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .trust-val {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 700;
+      color: var(--gold); line-height: 1;
+    }
+    .trust-lbl {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: rgba(247,243,233,0.5);
+    }
+
+    .hero-photo {
+      grid-column: 2; position: relative; overflow: hidden;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.45;
+    }
+    .hero-photo-veil {
+      position: absolute; inset: 0;
+      background: linear-gradient(120deg, var(--green-deep) 0%, rgba(24,46,34,0.5) 45%, rgba(24,46,34,0.15) 100%);
+    }
+
+    /* ── MARQUEE STRIP ───────────────────────────────── */
+    .strip {
+      background: var(--gold); overflow: hidden;
+      padding: 0.85rem 0; white-space: nowrap;
+    }
+    .strip-inner {
+      display: inline-flex; gap: 3rem;
+      animation: marquee 28s linear infinite;
+    }
+    .strip-inner span {
+      font-family: 'Fraunces', serif; font-style: italic;
+      font-weight: 600; font-size: 1rem;
+      color: var(--green-deep);
+    }
+    .strip-inner span::before { content: '✦'; margin-right: 1rem; font-style: normal; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── SECTION SHELL ───────────────────────────────── */
+    .wrap {
+      max-width: 1100px; margin: 0 auto;
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3.5rem);
+    }
+
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green-mid); margin-bottom: 0.6rem;
+    }
+    .heading {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-weight: 900; color: var(--green-deep);
+      line-height: 1.1; letter-spacing: -0.025em;
+      margin-bottom: 0.85rem;
+    }
+    .subheading {
+      font-size: 1.05rem; color: var(--warm-gray);
+      line-height: 1.65; max-width: 500px; margin-bottom: 3rem;
+    }
+
+    /* ── SERVICES ────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.25rem;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 18px; padding: 1.75rem 1.75rem 1.5rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card::after {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green-mid), var(--green-fresh));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(24,46,34,0.13); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon { font-size: 1.9rem; margin-bottom: 1rem; display: block; }
+    .service-name {
+      font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700;
+      color: var(--green-deep); margin-bottom: 0.45rem;
+    }
+    .service-desc { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.65; }
+
+    /* ── PHOTOS ──────────────────────────────────────── */
+    .photos-wrap {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3.5rem) clamp(4rem, 8vw, 6rem);
+    }
+    .photos-grid {
+      display: grid; grid-template-columns: 3fr 2fr;
+      gap: 1rem; border-radius: 22px; overflow: hidden;
+    }
+    .photos-grid img { width: 100%; height: 440px; object-fit: cover; display: block; }
+
+    /* ── ABOUT ───────────────────────────────────────── */
+    .about-bg {
+      background: var(--green-deep); position: relative; overflow: hidden;
+    }
+    .about-bg::before {
+      content: ''; position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(82,183,136,0.05);
+    }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: clamp(4rem, 8vw, 6.5rem) clamp(1.5rem, 5vw, 3.5rem);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem); align-items: center;
+    }
+    .about-inner .eyebrow { color: var(--green-fresh); }
+    .about-inner .heading { color: var(--cream); }
+    .about-text {
+      color: rgba(247,243,233,0.7); font-size: 1rem; line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .pillars { display: flex; flex-direction: column; gap: 0.9rem; }
+    .pillar {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+    }
+    .pillar-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 0.45rem;
+    }
+    .pillar-text { font-size: 0.93rem; color: rgba(247,243,233,0.75); line-height: 1.55; }
+    .pillar-text strong { color: var(--cream); }
+
+    .about-photo { border-radius: 18px; overflow: hidden; position: relative; }
+    .about-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
+    .about-badge {
+      position: absolute; bottom: 1.25rem; left: 1.25rem;
+      background: var(--gold); color: var(--green-deep);
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.9rem;
+      padding: 0.55rem 1.2rem; border-radius: 100px;
+    }
+
+    /* ── AREA ────────────────────────────────────────── */
+    .area-section {
+      background: var(--cream); text-align: center;
+    }
+    .area-wrap {
+      max-width: 660px; margin: 0 auto;
+      padding: clamp(4rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 3.5rem);
+    }
+    .area-wrap .subheading { margin: 0 auto 2.5rem; }
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--green-deep); color: var(--cream);
+      font-weight: 600; font-size: 0.95rem;
+      padding: 0.85rem 2rem; border-radius: 100px;
+      text-decoration: none; transition: background 0.2s, transform 0.2s;
+    }
+    .btn-dark:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+    /* ── CONTACT ─────────────────────────────────────── */
+    .contact-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3.5rem);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem); align-items: start;
+    }
+    .contact-desc { color: var(--warm-gray); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem; }
+    .details { display: flex; flex-direction: column; gap: 1rem; }
+    .detail { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
+    .detail-icon {
+      width: 38px; height: 38px; background: var(--card-bg);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    }
+
+    .contact-card {
+      background: var(--green-deep); border-radius: 22px; padding: 2.5rem;
+    }
+    .contact-card h3 {
+      font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700;
+      color: var(--cream); margin-bottom: 0.4rem;
+    }
+    .contact-card p {
+      color: rgba(247,243,233,0.65); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.75rem;
+    }
+    .google-cta {
+      background: rgba(82,183,136,0.12);
+      border: 1px solid rgba(82,183,136,0.3);
+      border-radius: 14px; padding: 1.5rem; text-align: center;
+    }
+    .google-cta p { color: var(--green-fresh); font-size: 0.95rem; font-weight: 500; margin: 0 0 0.75rem; }
+    .google-cta a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--gold); font-weight: 600; font-size: 0.88rem;
+      text-decoration: none;
+    }
+    .google-cta a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: var(--charcoal);
+      padding: 1.75rem clamp(1.5rem, 5vw, 3.5rem);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: 'Fraunces', serif; font-weight: 700;
+      color: rgba(255,255,255,0.65); font-size: 0.95rem;
+    }
+    footer a { color: rgba(255,255,255,0.4); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--green-fresh); }
+
+    /* ── STICKY MOBILE CTA ───────────────────────────── */
+    .sticky-bar {
+      display: none; position: fixed;
+      bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--gold);
+      padding: 0.9rem 1.5rem 1rem;
+    }
+    .sticky-bar a {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      color: var(--green-deep); font-weight: 700; font-size: 1rem;
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+      .hero-content { padding: 6.5rem 1.5rem 4.5rem; }
+
+      .about-inner { grid-template-columns: 1fr; }
+      .about-photo { order: -1; }
+      .about-photo img { height: 300px; }
+
+      .contact-inner { grid-template-columns: 1fr; }
+
+      .photos-grid { grid-template-columns: 1fr; }
+      .photos-grid img { height: 260px; }
+
+      .sticky-bar { display: block; }
+      body { padding-bottom: 70px; }
+
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 540px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-trust { gap: 1.25rem; }
+    }
+
+    /* ── REVEAL ANIMATIONS ───────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-logo">
+      <img src="./logo.jpg" alt="Lao Brothers LawnMowing logo">
+      <span class="header-name">Lao Brothers</span>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Salt%20Lake%20City%2C%20UT" target="_blank" class="header-cta">Get a Quote</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-pill">
+        <div class="hero-pill-dot"></div>
+        Salt Lake City, UT &nbsp;·&nbsp; Family-Owned
+      </div>
+
+      <img src="./logo.jpg" alt="Lao Brothers LawnMowing" class="hero-logo">
+
+      <h1>Brothers<br>by name.<br><em>Neighbors</em><br>by choice.</h1>
+      <p class="hero-tagline">We show up, cut clean, and care every time. Your lawn is our reputation.</p>
+
+      <div class="hero-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=Salt%20Lake%20City%2C%20UT" target="_blank" class="btn-gold">
+          📍 Find Us on Google
+        </a>
+        <a href="#services" class="btn-ghost">See our services →</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-val">Family</span>
+          <span class="trust-lbl">Owned & Operated</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-val">SLC</span>
+          <span class="trust-lbl">Salt Lake Valley</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-val">Free</span>
+          <span class="trust-lbl">Estimates Always</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="./photo-1.jpg" alt="Lao Brothers lawn work">
+      <div class="hero-photo-veil"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="strip">
+    <div class="strip-inner">
+      <span>Lawn Mowing &amp; Edging</span>
+      <span>Weed Control</span>
+      <span>Fertilization &amp; Overseeding</span>
+      <span>Spring &amp; Fall Cleanups</span>
+      <span>Hedge Trimming</span>
+      <span>Irrigation Blowout</span>
+      <span>Lawn Mowing &amp; Edging</span>
+      <span>Weed Control</span>
+      <span>Fertilization &amp; Overseeding</span>
+      <span>Spring &amp; Fall Cleanups</span>
+      <span>Hedge Trimming</span>
+      <span>Irrigation Blowout</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <p class="eyebrow reveal">What we do</p>
+      <h2 class="heading reveal">Lawn care done<br>the right way.</h2>
+      <p class="subheading reveal">From the weekly mow to the seasonal deep clean — no shortcuts, no excuses. We handle everything your yard needs.</p>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-icon">✂️</span>
+          <p class="service-name">Lawn Mowing & Edging</p>
+          <p class="service-desc">Crisp lines, even cuts, and clean edges every visit. Weekly or bi-weekly schedules to keep things looking sharp.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">🌿</span>
+          <p class="service-name">Weed Control & Treatment</p>
+          <p class="service-desc">Targeted removal and pre-emergent treatments that keep invasive plants from taking over before they start.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">🌱</span>
+          <p class="service-name">Fertilization & Overseeding</p>
+          <p class="service-desc">Seasonal feeds and overseeding to keep your lawn thick, green, and thriving through Utah's dry summers.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">🍂</span>
+          <p class="service-name">Spring & Fall Cleanups</p>
+          <p class="service-desc">Leaf removal, debris clearing, and full pre-season prep so your yard hits the ground running every year.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">🌳</span>
+          <p class="service-name">Hedge & Shrub Trimming</p>
+          <p class="service-desc">Neat, sculpted hedges and shrubs that frame your home and make the whole property look intentional.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">💧</span>
+          <p class="service-name">Irrigation Check & Blowout</p>
+          <p class="service-desc">Sprinkler system inspections and fall winterization to protect your lines from Utah's hard freezes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <div class="photos-wrap">
+    <div class="photos-grid reveal">
+      <img src="./photo-1.jpg" alt="Lao Brothers lawn work">
+      <img src="./photo-2.jpg" alt="Lao Brothers lawn care">
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-bg">
+    <div class="about-inner">
+      <div>
+        <p class="eyebrow reveal">Our story</p>
+        <h2 class="heading reveal">The brothers<br>behind the mow.</h2>
+        <p class="about-text reveal">
+          Lao Brothers LawnMowing was built on a simple idea: show up, do the work right, and treat every yard like it's your own. We're a family operation in Salt Lake City — the kind of crew that remembers your name, notices when the sprinklers are off, and takes real pride in what we leave behind.
+        </p>
+        <p class="about-text reveal">
+          When you hire us, you're not getting a faceless company that sends whoever's available. You're getting the brothers — consistent, reliable, and genuinely invested in how your lawn looks.
+        </p>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <div class="pillar-dot"></div>
+            <p class="pillar-text"><strong>We show up on time.</strong> No guessing, no vague windows. You'll know when we're coming.</p>
+          </div>
+          <div class="pillar reveal">
+            <div class="pillar-dot"></div>
+            <p class="pillar-text"><strong>We notice the details.</strong> Blown edges, trimmed borders, clippings cleared — every time.</p>
+          </div>
+          <div class="pillar reveal">
+            <div class="pillar-dot"></div>
+            <p class="pillar-text"><strong>We're neighbors.</strong> We live here too. This neighborhood matters to us personally.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-photo reveal">
+        <img src="./photo-2.jpg" alt="Lao Brothers team at work">
+        <div class="about-badge">Salt Lake City, UT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="area-section">
+    <div class="area-wrap">
+      <p class="eyebrow reveal">Where we work</p>
+      <h2 class="heading reveal">Serving the Salt Lake Valley.</h2>
+      <p class="subheading reveal">From the Avenues to West Valley, Murray to Millcreek — if you're in the valley, we've got your lawn covered. Reach out and we'll confirm your neighborhood.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Salt%20Lake%20City%2C%20UT" target="_blank" class="btn-dark reveal">
+        📍 Find Us on Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div>
+        <p class="eyebrow reveal">Get in touch</p>
+        <h2 class="heading reveal">Ready for a lawn<br>you're proud of?</h2>
+        <p class="contact-desc reveal">Reach out through Google and we'll get back to you about your yard, your schedule, and what it takes to make things right. Free estimates — no pressure.</p>
+        <div class="details">
+          <div class="detail reveal">
+            <div class="detail-icon">📍</div>
+            <span>Salt Lake City, UT</span>
+          </div>
+          <div class="detail reveal">
+            <div class="detail-icon">🗓️</div>
+            <span>Available spring through fall</span>
+          </div>
+          <div class="detail reveal">
+            <div class="detail-icon">🤝</div>
+            <span>Free estimates — always</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <h3>Let's talk about your lawn.</h3>
+        <p>Find us on Google to get in touch, ask questions, or leave a review. We read every one.</p>
+        <div class="google-cta">
+          <p>Find us on Google Maps to reach out</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Salt%20Lake%20City%2C%20UT" target="_blank">
+            Open Google Maps →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Lao Brothers LawnMowing — Salt Lake City, UT</span>
+    <a href="https://github.com/saiafonua/frontdoor">Built with Frontdoor</a>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-bar">
+    <a href="https://www.google.com/maps/search/?api=1&query=Salt%20Lake%20City%2C%20UT" target="_blank">
+      📍 Find Us on Google Maps
+    </a>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 0.08 + 's';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
